@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Undercromo</string>
+    <string name="label_login">Log In</string>
+    <string name="e_mail_placeholder">E-mail</string>
+    <string name="password_placeholder">Password</string>
+    <string name="forgot_your_password_login">Forgot your password?</string>
+    <string name="login_button">Login</string>
+    <string name="already_have_an_account_log_in">Already have an account? <b>Log In</b></string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="text_forgot_password">Please Enter Your Email Adress to Recieve a Verification cord</string>
+    <string name="try_another_way">Try another way</string>
+    <string name="send_button_forgot">Send</string>
+    <string name="verify_your_email_title">Verify Your Email</string>
+    <string name="text_verify_email">Please Enter The 4 Digit Code Sent To Your Email</string>
+    <string name="resend_code_verify">Resend Code</string>
+    <string name="verify_button">Verify</string>
+    <string name="new_password_placeholder">New Password</string>
+    <string name="confirm_password_placeholder">Confirm Password</string>
+    <string name="confirm_buttonPassword">Confirm</string>
+    <string name="no_have_an_account_sign_up">No have an account? <b>Sign Up</b></string>
+    <string name="create_account_label">Create Account</string>
+    <string name="name_placeholder">Name</string>
+    <string name="phone_placeholder">Phone</string>
+    <string name="signup_button">SignUp</string>
+    <string name="tyc">I agree with our <b>Terms</b> and <b>Conditions</b></string>
+    <string name="text_edit_user">Edit User Information</string>
+    <string name="update_button">Update</string>
+    <string name="about_us_label">About Us</string>
+    <string name="shops_label">Shops</string>
+    <string name="miami_map">Miami</string>
+    <string name="maps">MAPS</string>
+    <string name="locationMiami">45 NE 41st St, Miami, FL 33137</string>
+    <string name="monToSun"><b>MON-SAT:</b> 10AM - 8PM</string>
+    <string name="sun"><b>SUN:</b>  10AM - 6PM</string>
+    <string name="our_clothes">Our Clothes</string>
+    <string name="product_features">
+    • Made of 100% heavyweight cotton.\n
+    • They won\'t fade, pill, or show through.\n
+    • Made to last a long time, obviously if you treat them well.
+</string>
+    <string name="premium_cotton">100% PREMIUM COTTON FABRIC, NO POLYESTER (PLASTIC)</string>
+    <string name="conditions">MADE UNDER FAIR CONDITIONS</string>
+    <string name="conditions_fair">
+    • No labor exploitation.\n
+    • We have a policy we call 12x. Our managers earn a maximum of 12 \n
+        times the salary of the lowest earner. This allows us to maintain \n
+        salary balance, making our lowest salary higher than the legal salary.
+</string>
+</resources>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/undercromo_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_chevron_backward"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editUserInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_edit_user"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/undercromo_gray_inputs"
+            app:layout_constraintTop_toBottomOf="@id/editUserInformation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/logoImage"
+                    android:layout_width="136dp"
+                    android:layout_height="82dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="48dp"
+                    android:src="@drawable/uc_rm"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="96dp"
+                    android:text="Nombre del usuario"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="100dp"
+                    android:layout_height="102dp"
+                    android:background="@drawable/circle_edit"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_profile"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="5dp"
+                    tools:layout_editor_absoluteY="29dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/name_placeholder"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userCard" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_person"
+            android:text="Nombre del usuario traido con la data"
+            android:drawablePadding="10dp"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameLabel" />
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/e_mail_placeholder"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editName" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="10dp"
+            android:inputType="textEmailAddress"
+            android:text="Email traido con la data"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailLabel" />
+
+        <TextView
+            android:id="@+id/phoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/phone_placeholder"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editEmail" />
+
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="10dp"
+            android:inputType="phone"
+            android:text="Telefonotraido con la data"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneLabel" />
+
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="187dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/undercromo_gray_inputs"
+            android:text="@string/update_button"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editPhone" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
