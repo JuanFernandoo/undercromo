@@ -1,9 +1,11 @@
-package com.shop.undercromo;
+package com.shop.undercromo.activities;
 
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.shop.undercromo.R;
 
 public class MainActivity extends AppCompatActivity {
 
