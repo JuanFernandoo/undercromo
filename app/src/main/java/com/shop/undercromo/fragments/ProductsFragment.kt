@@ -28,7 +28,7 @@ class ProductsFragment : Fragment() {
 
         // Lista de productos estática
         productList = mutableListOf(
-            Product("The Path Birds T-shirt Black", "$100", R.drawable.product1),
+            Product("The Path Birds T-shirt Black", "$100", R.drawable.product_placeholder),
             Product("The Path Gold Hoodie Rose Fire", "$250", R.drawable.product2),
             Product("Hekios Dazzled Boxy Fit T-shirt Faded Black", "$150", R.drawable.product3),
             Product("Thunder Rider Pegasus Zip Up Jacket Rusty Black", "$300", R.drawable.product4),

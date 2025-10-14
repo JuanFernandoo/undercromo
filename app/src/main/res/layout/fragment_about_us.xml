@@ -12,78 +12,23 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/userCard"
-            android:layout_width="346dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="@color/undercromo_gray_inputs"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/logoImage"
-                    android:layout_width="53dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="260dp"
-                    android:src="@drawable/uc_rm"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/userName"
-                    android:layout_width="132dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="88dp"
-                    android:text="@string/app_name"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="37dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/circle_edit"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_profile"
-                    tools:ignore="MissingConstraints"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-
         <ImageButton
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="24dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="8dp"
             android:src="@drawable/ic_chevron_backward"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/userCard" />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/editUserInformation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="24dp"
             android:text="@string/about_us_label"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -91,7 +36,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/userCard" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/shopLabel"
@@ -104,24 +49,23 @@
             android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/editUserInformation" />
+            app:layout_constraintTop_toBottomOf="@id/editUserInformation" />
 
         <ImageView
             android:id="@+id/imageMap"
             android:layout_width="255dp"
             android:layout_height="126dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="64dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/ug_map"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editUserInformation" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shopLabel" />
 
         <TextView
             android:id="@+id/mapLabel"
-            android:layout_width="89dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/miami_map"
             android:textAlignment="center"
@@ -129,49 +73,48 @@
             android:textColor="@color/undercromo_map"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageMap"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageMap" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/infoLocation"
-            android:layout_width="180dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/locationMiami"
             android:textAlignment="center"
             android:textColor="@color/undercromo_gray_placeholder"
             android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintTop_toBottomOf="@id/mapLabel"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mapLabel" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/MonToSat"
-            android:layout_width="137dp"
-            android:layout_height="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/monToSun"
             android:textAlignment="center"
             android:textColor="@color/undercromo_gray_placeholder"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.157"
+            app:layout_constraintTop_toBottomOf="@id/infoLocation"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/infoLocation" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/Sun"
-            android:layout_width="107dp"
-            android:layout_height="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="@string/sun"
             android:textAlignment="center"
             android:textColor="@color/undercromo_gray_placeholder"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintTop_toBottomOf="@id/MonToSat"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/MonToSat" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <View
             android:id="@+id/lineShopInfo"
@@ -179,10 +122,9 @@
             android:layout_height="2dp"
             android:layout_marginTop="24dp"
             android:background="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintTop_toBottomOf="@id/Sun"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Sun" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/ourClothes"
@@ -194,67 +136,63 @@
             android:textColor="@color/undercromo_gray_placeholder"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineShopInfo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/lineShopInfo" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/premiumCotton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:text="@string/premium_cotton"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="9sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.277"
+            app:layout_constraintTop_toBottomOf="@id/ourClothes"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ourClothes" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/detailsCotton"
-            android:layout_width="241dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/product_features"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:textColor="@color/undercromo_gray_placeholder"
             android:textSize="9sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintTop_toBottomOf="@id/premiumCotton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/premiumCotton" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/madeConditions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="@string/conditions"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="9sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintTop_toBottomOf="@id/detailsCotton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detailsCotton" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/fairConditions"
-            android:layout_width="294dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/conditions_fair"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:textColor="@color/undercromo_gray_placeholder"
             android:textSize="9sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.352"
+            app:layout_constraintTop_toBottomOf="@id/madeConditions"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/madeConditions" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

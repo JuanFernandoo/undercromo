@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/undercromo_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_chevron_backward"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editUserInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Editar información del usuario"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/undercromo_gray_inputs"
+            app:layout_constraintTop_toBottomOf="@id/editUserInformation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="100dp"
+                    android:layout_height="102dp"
+                    android:background="@drawable/circle_edit"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/profileImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="8dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Nombre:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/userCard"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/nameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Correo:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="10dp"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/emailLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/phoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Teléfono:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editEmail"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="10dp"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/phoneLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/oldPassLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Contraseña actual:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editPhone"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editOldPassword"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/oldPassLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/newPassLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nueva contraseña:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editOldPassword"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editNewPassword"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/newPassLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/confirmPassLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Confirmar contraseña:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editNewPassword"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editConfirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/inputs_style"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/undercromo_gray_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/confirmPassLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="187dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/undercromo_gray_inputs"
+            android:text="Actualizar"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editConfirmPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
