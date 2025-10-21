@@ -12,7 +12,8 @@ import com.shop.undercromo.R;
 import com.shop.undercromo.fragments.ProductsFragment;
 import com.shop.undercromo.fragments.UserFragment;
 import com.shop.undercromo.fragments.AboutUsFragment;
-
+import com.shop.undercromo.fragments.CartFragment;
+import com.shop.undercromo.fragments.WishListFragment;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
@@ -46,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
             if (id == R.id.nav_products) {
                 selectedFragment = new ProductsFragment();
+            } else if (id == R.id.nav_cart) {
+                selectedFragment = new CartFragment();
+            } else if (id == R.id.nav_wishlist) {
+                selectedFragment = new WishListFragment();
             } else if (id == R.id.nav_profile) {
                 selectedFragment = new UserFragment();
             } else if (id == R.id.nav_about_us) {

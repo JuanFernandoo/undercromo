@@ -17,6 +17,12 @@
         android:icon="@drawable/ic_cart"
         android:title="Carrito" />
 
+    <!-- Opción de wishlist -->
+    <item
+        android:id="@+id/nav_wishlist"
+        android:icon="@drawable/ic_wishlist"
+        android:title="Wishlist" />
+
     <!-- Opción de perfil -->
     <item
         android:id="@+id/nav_profile"
