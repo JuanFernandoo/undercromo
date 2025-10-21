@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Opción de inicio -->
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home"
         android:title="Inicio" />
 
-    <!-- Opción de productos -->
     <item
         android:id="@+id/nav_products"
         android:icon="@drawable/ic_products"

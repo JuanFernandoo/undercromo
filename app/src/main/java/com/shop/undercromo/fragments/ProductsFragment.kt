@@ -26,7 +26,6 @@ class ProductsFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
 
-        // Lista de productos estática
         productList = mutableListOf(
             Product("The Path Birds T-shirt Black", "$100", R.drawable.product_placeholder),
             Product("The Path Gold Hoodie Rose Fire", "$250", R.drawable.product2),
@@ -36,9 +35,8 @@ class ProductsFragment : Fragment() {
             Product("UnderGold Sweatshirt", "$120", R.drawable.product6)
         )
 
-        productAdapter = ProductAdapter(productList)
+        productAdapter = ProductAdapter(requireContext(), productList)
         recyclerView.adapter = productAdapter
-
         return view
     }
 }
