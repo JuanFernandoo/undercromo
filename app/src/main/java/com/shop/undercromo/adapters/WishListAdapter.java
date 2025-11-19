@@ -54,7 +54,7 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.ViewHo
 
         holder.productName.setText(product.getName());
         holder.productPrice.setText(product.getPrice());
-        holder.productImage.setImageResource(product.getImageResId());
+        holder.productImage.setImageResource(product.getImageRes());
 
         // Desactivamos las acciones por ahora
         holder.btnAddCart.setEnabled(false);

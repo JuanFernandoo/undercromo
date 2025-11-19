@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "621728736854",
+    "project_id": "undercromo-27354",
+    "storage_bucket": "undercromo-27354.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621728736854:android:36f7f92f0484aa6067fdf7",
+        "android_client_info": {
+          "package_name": "com.shop.undercromo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyqXwVPjB3yXxcIPoNlZWmbIccUAoAumw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

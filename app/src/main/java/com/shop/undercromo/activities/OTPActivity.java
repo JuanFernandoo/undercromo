@@ -3,6 +3,8 @@ package com.shop.undercromo.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,7 +22,7 @@ public class OTPActivity extends AppCompatActivity {
     private TextView resendCode;
 
     @Override
-    protected void  onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verify_your_email);
 
@@ -31,6 +33,8 @@ public class OTPActivity extends AppCompatActivity {
         buttonVerify = findViewById(R.id.buttonVerify);
         resendCode = findViewById(R.id.resendCode);
 
+        setupOtpInputs();
+
         buttonVerify.setOnClickListener(v -> verifyCode());
         resendCode.setOnClickListener(v -> resendOtp());
 
@@ -38,28 +42,72 @@ public class OTPActivity extends AppCompatActivity {
         backButton.setOnClickListener(v -> onBackPressed());
     }
 
-    private void verifyCode() {
-        String enteredCode = code1.getText().toString() + code2.getText().toString() + code3.getText().toString() + code4.getText().toString();
+    // ---------------------------------------------------------
+    //  CONFIGURACIÓN DE LOS INPUTS PARA QUE SE MUEVAN AUTOMÁTICO
+    // ---------------------------------------------------------
+    private void setupOtpInputs() {
+        code1.addTextChangedListener(new OTPTextWatcher(code1, code2, null));
+        code2.addTextChangedListener(new OTPTextWatcher(code2, code3, code1));
+        code3.addTextChangedListener(new OTPTextWatcher(code3, code4, code2));
+        code4.addTextChangedListener(new OTPTextWatcher(code4, null, code3));
+    }
 
-        if (enteredCode.length() != 4){
-            Toast.makeText(this, "Ingrese el codigo de 4 digitos", Toast.LENGTH_SHORT).show();
-        return;
+    private class OTPTextWatcher implements TextWatcher {
+        private EditText current, next, previous;
+
+        public OTPTextWatcher(EditText current, EditText next, EditText previous) {
+            this.current = current;
+            this.next = next;
+            this.previous = previous;
         }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (s.length() == 1 && next != null) {
+                next.requestFocus();
+            } else if (s.length() == 0 && previous != null) {
+                previous.requestFocus();
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {}
+    }
+
+    // ---------------------------------------------------------
+    //  VERIFICAR OTP
+    // ---------------------------------------------------------
+    private void verifyCode() {
+        String enteredCode = code1.getText().toString()
+                + code2.getText().toString()
+                + code3.getText().toString()
+                + code4.getText().toString();
+
+        if (enteredCode.length() != 4) {
+            Toast.makeText(this, "Ingrese el código de 4 dígitos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         SharedPreferences sharedPreferences = getSharedPreferences("userData", MODE_PRIVATE);
         int savedOtp = sharedPreferences.getInt("otp", -1);
 
-        if(savedOtp == Integer.parseInt(enteredCode)){
-            Toast.makeText(this, "Codigo correcto", Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(OTPActivity.this, NewPasswordActivity.class);
-            startActivity(intent);
+        if (savedOtp == Integer.parseInt(enteredCode)) {
+            Toast.makeText(this, "Código correcto", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(OTPActivity.this, NewPasswordActivity.class));
             finish();
-        }else{
-            Toast.makeText(this, "Codigo incorrecto", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Código incorrecto", Toast.LENGTH_SHORT).show();
         }
     }
-    private void resendOtp(){
-        int newOtp = (int)(Math.random() * 9000) + 1000;
+
+    // ---------------------------------------------------------
+    //  REENVIAR NUEVO OTP
+    // ---------------------------------------------------------
+    private void resendOtp() {
+        int newOtp = (int) (Math.random() * 9000) + 1000;
 
         SharedPreferences sharedPreferences = getSharedPreferences("userData", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

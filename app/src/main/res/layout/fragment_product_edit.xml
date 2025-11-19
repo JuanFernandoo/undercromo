@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/undercromo_gray"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Imagen del producto -->
+        <ImageView
+            android:id="@+id/productImagePreview"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/product_placeholder"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- CardView para los campos -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/productCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/undercromo_gray_inputs"
+            app:layout_constraintTop_toBottomOf="@id/productImagePreview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- Nombre (más espacio dinámico) -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nombre:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/editProductName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="60dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/inputs_style"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/undercromo_gray_placeholder"
+                        android:hint="Nombre del producto"
+                        android:inputType="textMultiLine"
+                        android:scrollHorizontally="false"/>
+                </LinearLayout>
+
+                <!-- Precio -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Precio:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/editProductPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/inputs_style"
+                        android:padding="12dp"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/undercromo_gray_placeholder"
+                        android:hint="Precio"/>
+                </LinearLayout>
+
+                <!-- Descripción (más espacio dinámico) -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Descripción:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/editProductDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/inputs_style"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/undercromo_gray_placeholder"
+                        android:hint="Descripción"
+                        android:inputType="textMultiLine"
+                        android:scrollHorizontally="false"/>
+                </LinearLayout>
+
+                <!-- Stock -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Stock:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/editProductStock"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/inputs_style"
+                        android:padding="12dp"
+                        android:inputType="number"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/undercromo_gray_placeholder"
+                        android:hint="Stock"/>
+                </LinearLayout>
+
+                <!-- Botón Guardar -->
+                <Button
+                    android:id="@+id/saveProductButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/undercromo_gray_inputs"
+                    android:text="Guardar Cambios"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

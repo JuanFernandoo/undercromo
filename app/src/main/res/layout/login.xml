@@ -107,15 +107,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/forgotPassword" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGoogle"
+            android:layout_width="187dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="@color/undercromo_gray_inputs"
+            android:text="@string/googleLogin"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="70dp"
+            app:icon="@drawable/ic_google"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/forgotPassword" />
+
+
         <View
             android:id="@+id/lineLogin"
             android:layout_width="305dp"
             android:layout_height="2dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="80dp"
             android:background="@color/undercromo_gray_inputs"
-            app:layout_constraintTop_toBottomOf="@id/buttonLogin"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
 
         <TextView
             android:id="@+id/loginRedirect"

@@ -4,28 +4,28 @@
     android:viewportWidth="24"
     android:viewportHeight="24">
 
-    <!-- Círculo rojo de fondo -->
+    <!-- Círculo de fondo blanco -->
     <path
-        android:fillColor="@android:color/darker_gray"
-        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z" />
+        android:fillColor="@android:color/white"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
 
-    <!-- Barra 1 de la X -->
+    <!-- Barra 1 de la X (gris) -->
     <group
         android:pivotX="12"
         android:pivotY="12"
         android:rotation="45">
         <path
             android:fillColor="@color/undercromo_gray"
-            android:pathData="M11,6h2v12h-2z" />
+            android:pathData="M11,6h2v12h-2z"/>
     </group>
 
-    <!-- Barra 2 de la X -->
+    <!-- Barra 2 de la X (gris) -->
     <group
         android:pivotX="12"
         android:pivotY="12"
         android:rotation="-45">
         <path
             android:fillColor="@color/undercromo_gray"
-            android:pathData="M11,6h2v12h-2z" />
+            android:pathData="M11,6h2v12h-2z"/>
     </group>
 </vector>

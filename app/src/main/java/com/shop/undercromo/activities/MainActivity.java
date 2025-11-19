@@ -3,17 +3,21 @@ package com.shop.undercromo.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.material.navigation.NavigationView;
 import com.shop.undercromo.R;
+import com.shop.undercromo.fragments.CartFragment;
+import com.shop.undercromo.fragments.ProductsAdminFragment;
 import com.shop.undercromo.fragments.ProductsFragment;
 import com.shop.undercromo.fragments.UserFragment;
 import com.shop.undercromo.fragments.AboutUsFragment;
-import com.shop.undercromo.fragments.CartFragment;
 import com.shop.undercromo.fragments.WishListFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
@@ -27,18 +31,21 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
 
-        // Fragment por defecto
+        // Verificar si es admin
+        boolean isAdmin = getIntent().getBooleanExtra("isAdmin", false);
+
         if (savedInstanceState == null) {
-            replaceFragment(new ProductsFragment());
+            if (isAdmin) {
+                replaceFragment(new ProductsAdminFragment());
+            } else {
+                replaceFragment(new ProductsFragment());
+            }
         }
 
         ImageButton menuButton = findViewById(R.id.menu_button);
         menuButton.setOnClickListener(v -> {
-            if (drawerLayout.isDrawerOpen(navView)) {
-                drawerLayout.closeDrawer(navView);
-            } else {
-                drawerLayout.openDrawer(navView);
-            }
+            if (drawerLayout.isDrawerOpen(navView)) drawerLayout.closeDrawer(navView);
+            else drawerLayout.openDrawer(navView);
         });
 
         navView.setNavigationItemSelectedListener(item -> {
@@ -46,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             if (id == R.id.nav_products) {
-                selectedFragment = new ProductsFragment();
+                selectedFragment = isAdmin ? new ProductsAdminFragment() : new ProductsFragment();
             } else if (id == R.id.nav_cart) {
                 selectedFragment = new CartFragment();
             } else if (id == R.id.nav_wishlist) {
@@ -64,17 +71,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
-            if (selectedFragment != null) {
+            if(selectedFragment != null){
                 replaceFragment(selectedFragment);
                 drawerLayout.closeDrawer(navView);
                 return true;
             }
-
             return false;
         });
     }
 
-    private void replaceFragment(Fragment fragment) {
+    private void replaceFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
@@ -82,10 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(navView)) {
-            drawerLayout.closeDrawer(navView);
-        } else {
-            super.onBackPressed();
-        }
+        if(drawerLayout.isDrawerOpen(navView)) drawerLayout.closeDrawer(navView);
+        else super.onBackPressed();
     }
 }

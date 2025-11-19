@@ -13,35 +13,58 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.shop.undercromo.R;
 import com.shop.undercromo.adapters.ProductAdminAdapter;
+import com.shop.undercromo.data.ProductRepository;
 import com.shop.undercromo.models.Product;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsAdminFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private ProductAdminAdapter productAdminAdapter;
+    private ProductAdminAdapter adapter;
     private List<Product> productList;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_products_admin, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_admin_products);
+
+        // Obtener lista del repositorio
+        productList = ProductRepository.getInstance().getProducts();
+
+        adapter = new ProductAdminAdapter(getContext(), productList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
 
-        productList = new ArrayList<>();
-        productList.add(new Product("The Path Birds T-shirt Black", "$100", R.drawable.product_placeholder));
-        productList.add(new Product("The Path Gold Hoodie Rose Fire", "$250", R.drawable.product2));
-        productList.add(new Product("Hekios Dazzled Boxy Fit T-shirt Faded Black", "$150", R.drawable.product3));
-        productList.add(new Product("Thunder Rider Pegasus Zip Up Jacket Rusty Black", "$300", R.drawable.product4));
-        productList.add(new Product("Gray T-Shirt", "$80", R.drawable.product5));
-        productList.add(new Product("UnderGold Sweatshirt", "$120", R.drawable.product6));
+        // Click listener
+        adapter.setOnItemClickListener(new ProductAdminAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Product product, int position) {
+                // click en item completo si quieres
+            }
 
-        productAdminAdapter = new ProductAdminAdapter(getContext(), productList);
-        recyclerView.setAdapter(productAdminAdapter);
+            @Override
+            public void onEditClick(Product product, int position) {
+                // abrir fragment de edición
+                ProductEditFragment editFragment = ProductEditFragment.newInstance(product, position);
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, editFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+
+            @Override
+            public void onRemoveClick(Product product, int position) {
+                ProductRepository.getInstance().removeProduct(position);
+                adapter.notifyItemRemoved(position);
+            }
+        });
 
         return view;
     }
